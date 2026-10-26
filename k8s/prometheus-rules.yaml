@@ -1,0 +1,57 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: hotel-alert-rules
+  namespace: hotel-app
+  labels:
+    app: hotel-system
+    release: prometheus-stack
+spec:
+  groups:
+    - name: hotel.alerts
+      rules:
+        # Alerta 1: Servicio A Caído
+        - alert: HotelCatalogServiceDown
+          expr: up{job=~".*hotel-catalog.*"} == 0
+          for: 1m
+          labels:
+            severity: critical
+            service: hotel-catalog-service
+          annotations:
+            summary: "Servicio de Catálogo de Hotel Caído"
+            description: "El pod de hotel-catalog-service está inaccesible o en estado no saludable por más de 1 minuto."
+
+        # Alerta 2: Servicio B Caído
+        - alert: HotelBookingServiceDown
+          expr: up{job=~".*hotel-booking.*"} == 0
+          for: 1m
+          labels:
+            severity: critical
+            service: hotel-booking-service
+          annotations:
+            summary: "Servicio de Reservas de Hotel Caído"
+            description: "El pod de hotel-booking-service está inaccesible o en estado no saludable por más de 1 minuto."
+
+        # Alerta 3 (Negocio): Alta tasa de fallos en creación de reservas
+        - alert: HotelHighBookingFailureRate
+          expr: rate(hotel_booking_failures_total[2m]) > 0.05
+          for: 1m
+          labels:
+            severity: warning
+            service: hotel-booking-service
+            category: business
+          annotations:
+            summary: "Alta tasa de fallos al procesar reservas"
+            description: "Se están registrando fallos frecuentes en la reserva de habitaciones o actividades (tasa > 0.05 fallos/seg)."
+
+        # Alerta 4 (Negocio / Casuística 2): Latencia degradada en el catálogo
+        - alert: HotelCatalogHighLatencyDegraded
+          expr: hotel_catalog_artificial_delay_ms > 1500
+          for: 30s
+          labels:
+            severity: warning
+            service: hotel-catalog-service
+            category: performance
+          annotations:
+            summary: "Catálogo operando con latencia degradada peligrosa"
+            description: "El delay artificial en el catálogo es de {{ $value }} ms, superando el umbral de seguridad y provocando timeouts en reservas."

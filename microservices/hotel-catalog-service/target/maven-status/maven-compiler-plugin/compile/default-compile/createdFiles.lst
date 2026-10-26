@@ -1,0 +1,9 @@
+com\hotel\catalog\service\CatalogDataService.class
+com\hotel\catalog\controller\RoomController.class
+com\hotel\catalog\controller\HealthController.class
+com\hotel\catalog\model\Room.class
+com\hotel\catalog\metrics\CatalogMetrics.class
+com\hotel\catalog\controller\MetricsController.class
+com\hotel\catalog\model\Activity.class
+com\hotel\catalog\CatalogServiceApplication.class
+com\hotel\catalog\controller\ActivityController.class

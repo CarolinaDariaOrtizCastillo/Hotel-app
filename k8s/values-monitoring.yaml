@@ -1,0 +1,32 @@
+# Configuración personalizada de Helm para kube-prometheus-stack
+# Valle Grande - Monitoreo de Microservicios
+
+grafana:
+  adminPassword: "AdminPassword123!"
+  service:
+    type: NodePort
+    nodePort: 31000
+
+prometheus:
+  service:
+    type: NodePort
+    nodePort: 30090
+
+  prometheusSpec:
+    # Parámetro crítico: permite que Prometheus busque ServiceMonitors en TODOS los namespaces
+    # Si fuera true (por defecto), solo buscaría ServiceMonitors con el label del release de Helm en su propio namespace
+    serviceMonitorSelectorNilUsesHelmValues: false
+    serviceMonitorSelector: {}
+
+    # Permite descubrir PrometheusRules en todos los namespaces
+    ruleSelectorNilUsesHelmValues: false
+    ruleSelector: {}
+
+    # Intervalo de scraping global
+    scrapeInterval: 10s
+    evaluationInterval: 10s
+
+alertmanager:
+  service:
+    type: NodePort
+    nodePort: 30903

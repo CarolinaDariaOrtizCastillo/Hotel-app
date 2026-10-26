@@ -1,0 +1,20 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: hotel-catalog-servicemonitor
+  namespace: hotel-app
+  labels:
+    app: hotel-catalog-service
+    release: prometheus-stack
+spec:
+  selector:
+    matchLabels:
+      app: hotel-catalog-service
+  namespaceSelector:
+    matchNames:
+      - hotel-app
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 10s
+      scrapeTimeout: 5s

@@ -1,0 +1,12 @@
+com\hotel\booking\model\CatalogResourceDto.class
+com\hotel\booking\model\BookingRequest.class
+com\hotel\booking\controller\HealthController.class
+com\hotel\booking\service\BookingDataService.class
+com\hotel\booking\metrics\BookingMetrics.class
+com\hotel\booking\BookingServiceApplication.class
+com\hotel\booking\controller\BookingController.class
+com\hotel\booking\model\Booking.class
+com\hotel\booking\client\CatalogClient$CatalogTimeoutException.class
+com\hotel\booking\controller\MetricsController.class
+com\hotel\booking\client\CatalogClient.class
+com\hotel\booking\client\CatalogClient$CatalogCommunicationException.class
