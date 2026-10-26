@@ -173,5 +173,25 @@ Micrometer es una **fachada de métricas** (como SLF4J para logging). Permite es
 
 ### Pods, deployments, réplicas y services de hotel-ap
 
+<img width="1193" height="780" alt="Captura de pantalla 2026-10-25 200655" src="https://github.com/user-attachments/assets/14359ccf-7fe2-4b37-a25b-07e77a2193de" />
+
+<img width="1317" height="437" alt="Captura de pantalla 2026-10-25 201038" src="https://github.com/user-attachments/assets/39be0e7f-07a2-420f-bee4-b42646306b24" />
+
 
 ### Casuísticas y sus resultaods
+
+<img width="1438" height="827" alt="Captura de pantalla 2026-10-25 201253" src="https://github.com/user-attachments/assets/76dc8073-d5eb-4f71-bd78-0198fccad4c4" />
+
+<img width="1907" height="1011" alt="Captura de pantalla 2026-10-25 201507" src="https://github.com/user-attachments/assets/01cf0c3d-35cd-436e-b004-aeea8d13fcc1" />
+
+<img width="1072" height="743" alt="Captura de pantalla 2026-10-25 215451" src="https://github.com/user-attachments/assets/c4c1fd00-1cbf-4717-a3fc-341e16e0bef7" />
+
+<img width="1917" height="948" alt="Captura de pantalla 2026-10-25 215402" src="https://github.com/user-attachments/assets/a7168061-344f-4ebf-9564-adab756aa29f" />
+
+<img width="1097" height="671" alt="Captura de pantalla 2026-10-25 220419" src="https://github.com/user-attachments/assets/684bbd95-63e6-446f-8453-58aeae10a923" />
+
+<img width="1915" height="950" alt="Captura de pantalla 2026-10-25 220459" src="https://github.com/user-attachments/assets/51a5fd61-6be5-460b-b461-90c36a5300f0" />
+
+<img width="355" height="676" alt="Captura de pantalla 2026-10-25 223523" src="https://github.com/user-attachments/assets/eeee525a-31f0-460c-8671-98ed89f92398" />
+
+<img width="1337" height="631" alt="Captura de pantalla 2026-10-25 223644" src="https://github.com/user-attachments/assets/3b7397be-58a3-4e5a-b702-8f376e5177af" />
